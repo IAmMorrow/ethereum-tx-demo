@@ -1,0 +1,17 @@
+{
+  "name": "ethereum-tx-tools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "start": "node lib/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "web3-eth-abi": "^1.2.9"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
+}
