@@ -58,8 +58,8 @@ async function test() {
     // getting the contract ABI from etherscan
     const contractAbi = await getAbiForContract("0x6b175474e89094c44da98b954eedeac495271d0f");
 
-    // building and serializing the transaction with the parameters
-    const serializedTx = serializeTx(
+    // building and serializing a transfer transaction
+    const erc20TransferSerializedTx = serializeTx(
         contractAbi,
         "transfer",
         {
@@ -68,7 +68,19 @@ async function test() {
         }
     );
 
-    console.log(serializedTx);
+    console.log(erc20TransferSerializedTx);
+
+    // building an approve transaction
+    const erc20ApproveSerializedTx = serializeTx(
+        contractAbi,
+        "approve",
+        {
+            usr: "0x6b175474e89094c44da98b954eedeac495271d0f",
+            wad: 255,
+        }
+    );
+
+    console.log(erc20ApproveSerializedTx);
 }
 
 test().then(() => console.log("DONE"))
